@@ -16,6 +16,10 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Schema::defaultStringLength(191);
+
+        $this->publishes([
+            app_path('../vendor/ckeditor/ckeditor') => public_path('assets/backend/vendor/ckeditor'),
+        ], 'assets');
     }
 
     /**

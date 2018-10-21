@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "408ab9b2f1403b337a5e1472879d7964",
+    "content-hash": "5c9efa5e19359690d854113c63dcb206",
     "packages": [
         {
             "name": "ckeditor/ckeditor",
-            "version": "4.10.1",
+            "version": "dev-full/latest",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ckeditor/ckeditor-releases.git",
-                "reference": "e5999810955383eb4f72c03a5af7f2dfd59390a0"
+                "reference": "611d18edfd2ee48568de8a14d62dc114c6e8abe5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ckeditor/ckeditor-releases/zipball/e5999810955383eb4f72c03a5af7f2dfd59390a0",
-                "reference": "e5999810955383eb4f72c03a5af7f2dfd59390a0",
+                "url": "https://api.github.com/repos/ckeditor/ckeditor-releases/zipball/611d18edfd2ee48568de8a14d62dc114c6e8abe5",
+                "reference": "611d18edfd2ee48568de8a14d62dc114c6e8abe5",
                 "shasum": ""
             },
             "type": "library",
@@ -45,7 +45,7 @@
                 "text",
                 "wysiwyg"
             ],
-            "time": "2018-09-11T18:33:38+00:00"
+            "time": "2018-09-11T18:29:39+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -4161,7 +4161,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "ckeditor/ckeditor": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
