@@ -44,7 +44,7 @@
                                     {!! $category->parent ? $category->parent : "<span class='badge badge-success'>Üst Kategori</span>" !!}
                                 </td>
                                 <td class="align-content-center text-center">{{$category->sort}}</td>
-                                <td class="align-content-center text-center">{{$category->status}}</td>
+                                <td class="align-content-center text-center"><span class='badge {{$category->status ? "badge-success" : "badge-danger"}}'>{{$category->status ? "Aktif" : "Pasif"}}</span></td>
                                 <td class="actions-hover actions-fade">
                                     <a class="mb-1 mt-1 mr-1 btn btn-warning text-white"
                                        href="{{route("backend.category.edit", ["id"=>$category->id])}}"><i
@@ -69,7 +69,7 @@
                                         <span class='badge badge-danger'>Alt Kategori</span>
                                     </td>
                                     <td class="align-content-center text-center">{{$subcategory->sort}}</td>
-                                    <td class="align-content-center text-center">{{$subcategory->status}}</td>
+                                    <td class="align-content-center text-center"><span class='badge {{$subcategory->status ? "badge-success" : "badge-danger"}}'>{{$subcategory->status ? "Aktif" : "Pasif"}}</span></td>
                                     <td class="actions-hover actions-fade">
                                         <a class="mb-1 mt-1 mr-1 btn btn-warning text-white"
                                            href="{{route("backend.category.edit", ["id"=>$subcategory->id])}}"><i

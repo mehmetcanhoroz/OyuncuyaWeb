@@ -29,11 +29,6 @@
                         </li>
                         <li>
                             <a class="nav-link" href="/">
-                                Epinler
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="/">
                                 Yorumlar
                             </a>
                         </li>
