@@ -4,7 +4,7 @@ namespace App\Http\Requests\Backend;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CategoryCreate extends FormRequest
+class CategoryEdit extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,6 +24,7 @@ class CategoryCreate extends FormRequest
     public function rules()
     {
         return [
+            "id" => "required|integer",
             "title" => "required|max:150|min:3",
             "details" => "max:2500",
             "parent" => "nullable|integer",
@@ -40,6 +41,9 @@ class CategoryCreate extends FormRequest
     public function messages()
     {
         return [
+            "id.required" => "ID gereklidir",
+            "id.integer" => "ID geçersizdir",
+
             "title.required" => "Başlık gereklidir",
             "title.max" => "Başlık en fazla :max karakter olabilir",
             "title.min" => "Başlık en az :min karakter olabilir",

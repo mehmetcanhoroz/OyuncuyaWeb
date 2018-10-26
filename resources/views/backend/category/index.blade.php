@@ -27,6 +27,7 @@
                             <th>Başlık</th>
                             <th>Üst Kategorisi</th>
                             <th class="align-content-center text-center" style="width: 50px !important;">Sıra</th>
+                            <th class="align-content-center text-center" style="width: 50px !important;">Durum</th>
                             <th style="width: 85px;">İşlemler</th>
                         </tr>
                         </thead>
@@ -35,14 +36,18 @@
                         @foreach($categories as $category)
                             <tr>
                                 <td class="primary">{{$category->id}}</td>
-                                <td><img width="150" src="{{$category->image ? asset("uploads/category/{$category->image}"):""}}"></td>
+                                <td><img width="150"
+                                         src="{{$category->image ? asset("uploads/category/{$category->image}"):""}}">
+                                </td>
                                 <td>{{$category->title}}</td>
                                 <td>
                                     {!! $category->parent ? $category->parent : "<span class='badge badge-success'>Üst Kategori</span>" !!}
                                 </td>
                                 <td class="align-content-center text-center">{{$category->sort}}</td>
+                                <td class="align-content-center text-center">{{$category->status}}</td>
                                 <td class="actions-hover actions-fade">
-                                    <a class="mb-1 mt-1 mr-1 btn btn-warning text-white"><i
+                                    <a class="mb-1 mt-1 mr-1 btn btn-warning text-white"
+                                       href="{{route("backend.category.edit", ["id"=>$category->id])}}"><i
                                                 class="fas fa-pencil-alt"></i> </a>
                                     <a data-id="{{$category}}"
                                        class="mb-1 mt-1 mr-1 btn btn-danger text-white delete"><i
@@ -56,14 +61,18 @@
                             @foreach($category->subcategories as $subcategory)
                                 <tr>
                                     <td class="info">— {{$subcategory->id}}</td>
-                                    <td><img width="150" src="{{$subcategory->image ? asset("uploads/category/{$subcategory->image}"):""}}"></td>
+                                    <td><img width="150"
+                                             src="{{$subcategory->image ? asset("uploads/category/{$subcategory->image}"):""}}">
+                                    </td>
                                     <td>{{$subcategory->title}}</td>
                                     <td>
                                         <span class='badge badge-danger'>Alt Kategori</span>
                                     </td>
                                     <td class="align-content-center text-center">{{$subcategory->sort}}</td>
+                                    <td class="align-content-center text-center">{{$subcategory->status}}</td>
                                     <td class="actions-hover actions-fade">
-                                        <a class="mb-1 mt-1 mr-1 btn btn-warning text-white"><i
+                                        <a class="mb-1 mt-1 mr-1 btn btn-warning text-white"
+                                           href="{{route("backend.category.edit", ["id"=>$subcategory->id])}}"><i
                                                     class="fas fa-pencil-alt"></i> </a>
                                         <a data-id="{{$subcategory}}"
                                            class="mb-1 mt-1 mr-1 btn btn-danger text-white delete"><i
@@ -141,6 +150,13 @@
                                     title: response.title,
                                     text: response.message,
                                 });
+
+                                /*if ($.fn.DataTable.isDataTable("#datatable-default")) {
+                                    $('#datatable-default').DataTable().clear().destroy();
+                                }
+
+                                $("#datatable-default").dataTable({
+                                });*/
                             }
                         },
                         error: function (response) {
